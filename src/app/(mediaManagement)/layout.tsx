@@ -10,7 +10,7 @@ export default function MediaManagementLayout({
 }) {
     return (
 
-        <Container maxWidth="xl" disableGutters sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <Container maxWidth="desktop" disableGutters sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
            
           
 
@@ -21,7 +21,7 @@ export default function MediaManagementLayout({
                 sx={{
                     flexGrow: 1,
                     overflow: 'auto',
-                    padding: '64px 32px',
+                    padding: '64px 40px',
                     backgroundColor: (theme) => theme.palette.background.default
                 }}
             >

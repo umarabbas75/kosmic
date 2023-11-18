@@ -13,14 +13,26 @@ declare module '@mui/material/Typography' {
     gradient : true
   }
 }
+declare module '@mui/material/styles' {
+  interface BreakpointOverrides {
+    xs: false; 
+    sm: false;
+    md: false;
+    lg: false;
+    xl: false;
+    mobile: true; 
+    tablet: true;
+    laptop: true;
+    desktop: true;
+  }
+}
 const theme = createTheme({
   breakpoints: {
     values: {
-      xs: 375,
-      sm: 745,
-      md: 1440,
-      lg: 1728,
-      xl : 2200
+      mobile: 375,
+      tablet: 745,
+      laptop: 1440,
+      desktop: 1728,
     },
   },
   typography: {
@@ -32,10 +44,7 @@ const theme = createTheme({
   palette:  {
     primary: {
       main: '#523FD7',
-      mainGradient: "linear-gradient(to right, tomato, cyan)",
-    } as {
-        main: string;
-        mainGradient?: string;
+    
     },
     secondary: {
       main: '#FF7DFF',
@@ -50,25 +59,19 @@ const theme = createTheme({
     },
     divider : '#3A3940',
     mode: 'dark',
-    // divider: {
-    //   default: '#3A3940',
-    //   light: '#3A3940',
-    // },
-    // gradient: {
-    //   main: 'linear-gradient(45deg, #523FD7, #FF7DFF)',
-    // },
+  
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 15, // Set border-radius for all buttons
+          borderRadius: 32, 
         },
         outlined: {
-          color: 'white', // Set text color for outlined variant
-          borderColor: '#3A3940', // Set border color for outlined variant
+          color: 'white', 
+          borderColor: '#3A3940', 
           '&:hover': {
-            borderColor: '#3A3940', // Adjust hover border color for outlined variant
+            borderColor: '#3A3940', 
           },
         },
       },
@@ -110,6 +113,75 @@ const theme = createTheme({
         },
       ],
     },
+    MuiAutocomplete: {
+      styleOverrides: {
+        inputRoot: {
+          '&:before': {
+            borderBottom: 'none !important',
+          }, 
+          '&:after': {
+            borderBottom: 'none !important',
+          },
+          
+        },
+        root: {
+          background: '#3A394080',
+          borderRadius: '5px',
+         
+          '& .MuiFormLabel-root': {
+           left : '10px'
+          },
+          '& .MuiInputBase-root': {
+           margin : 0,
+           height : '60px',
+           position: "relative"
+          
+          }, 
+          '& .MuiInputBase-input': {
+          paddingLeft : '10px !important'
+          }, 
+          '& .MuiInputLabel-shrink': {
+          top : 3
+          },
+          '& .MuiInputBase-root:before': {
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '5px',
+            padding: '1px', 
+            background: 'linear-gradient(45deg, #523FD7, #FF7DFF)',
+            WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+            WebkitMaskComposite: 'xor',
+            maskComposite: 'exclude',
+            pointerEvents: 'none',
+          }
+        },
+      },
+    },
+      MuiSlider: {
+        styleOverrides: {
+          thumb:{
+            '&:after': {
+              width: "20px",
+              height: "20px",
+              backgroundColor : '#FF7DFF',
+            },
+          },
+          root: {
+            '.MuiSlider-track': {
+              backgroundImage: 'linear-gradient(45deg, #523FD7, #FF7DFF)',
+              border: 'none',
+            },    
+            '.MuiSlider-thumb': {
+            backgroundColor : 'transparent',
+            boxShadow : '0 0 0 3px #FF7DFF',
+            width: '30px',
+    height: '30px'
+            },
+          
+        
+          },
+        },
+      },
   },
   
 });

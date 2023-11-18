@@ -1,3 +1,6 @@
 html,body{
   height: 100%;
 }
+.MuiAutocomplete-root.Mui-expanded .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-bottom: none !important;
+}
