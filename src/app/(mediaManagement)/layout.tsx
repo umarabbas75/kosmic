@@ -1,6 +1,7 @@
 "use client";
 import { AppBar, Box, Container, Paper, Toolbar, Typography } from "@mui/material"
 import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
 export default function MediaManagementLayout({
     children,
@@ -20,7 +21,7 @@ export default function MediaManagementLayout({
                 sx={{
                     flexGrow: 1,
                     overflow: 'auto',
-                    padding: '24px',
+                    padding: '64px 32px',
                     backgroundColor: (theme) => theme.palette.background.default
                 }}
             >
@@ -30,14 +31,7 @@ export default function MediaManagementLayout({
             </Box>
 
             {/* Footer */}
-            <Paper elevation={0} square >
-                <Toolbar>
-                    <Typography variant="body2">
-                        Your Footer
-                    </Typography>
-                </Toolbar>
-
-            </Paper>
+           <Footer/>
         </Container>
 
     )
