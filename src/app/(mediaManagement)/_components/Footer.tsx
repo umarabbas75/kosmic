@@ -2,7 +2,7 @@
 import { Box, Button, Paper, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({onSubmit}:any) => {
   const theme = useTheme();
   const isLargerThanTablet = useMediaQuery(theme.breakpoints.up('tablet'));
   
@@ -11,7 +11,7 @@ const Footer = () => {
       <Toolbar>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: { mobile: '10px', tablet: '0px' }, flexDirection: { mobile: 'column', tablet: 'row' }, width: '100%', padding:{ mobile : '16px 4px',tablet : '32px 16px'} }}>
           <Button variant="outlined" sx={{ width: { mobile: '100%', tablet: '146px' }, height: '51px' }} >Back</Button>
-          <Button variant="white" sx={{ width: { mobile: '100%', tablet: '234px' }, height: '52px',display : 'flex', gap :'120px' }}>
+          <Button onClick={onSubmit} variant="white" sx={{ width: { mobile: '100%', tablet: '234px' }, height: '52px',display : 'flex', gap :'120px' }}>
             <Typography variant="gradient">
               Next
             </Typography>
